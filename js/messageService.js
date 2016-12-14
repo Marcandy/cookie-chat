@@ -47,9 +47,10 @@ angular.module('chatroom').service('messageService', function($http){
   this.postCookie = function (myCookie) {
     return $http({
       method: 'POST',
-      url: 'http://practiceapi.devmounta.in/api/cookies',
-      data: {cookie: myCookie}
+      url: 'https://practiceapi.devmounta.in/api/cookies',
+      data: {myCookie}
     })
+
   }
 
 });
