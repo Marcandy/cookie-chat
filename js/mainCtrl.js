@@ -9,6 +9,12 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
   }
   $scope.getMessages();
 
+  $scope.getCookies = function () {
+    messageService.getCookies().then(function(cookies) {
+      $scope.cookies = cookies;
+    })
+  }
+  $scope.getCookies();
 
   //The postMessage function will take whatever the user typed in (hint: look at the html and see what ng-model correlates to on the input box),
   //pass that text to the postMessage method on the messageService object which will
@@ -32,5 +38,5 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
   }, 1500)
 
 
-  
+
 })

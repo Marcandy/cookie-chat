@@ -5,7 +5,7 @@ angular.module('chatroom').service('messageService', function($http){
       method: 'GET',
       url: 'https://practiceapi.devmounta.in/api/chats' //change to https for redirect
     }).then(function (res) {
-      return res.data
+      return res.data.reverse();
     })
     //return promise; // we can resolve the promise to make it happen in the service
   }
@@ -32,6 +32,18 @@ angular.module('chatroom').service('messageService', function($http){
   //Also, remember that $http returns a promise. So if you return the whole $http call (return $http(...)), you can then use .then in your controller.
 
 
+  //additional api
 
+  this.getCookies = function () {
+    return $http({
+      method: "GET",
+      url: 'https://practiceapi.devmounta.in/api/cookies'
+    }).then(function(res) {
+      console.log('cookie', res);
+      return res.data;
+    })
+  }
+
+  
 
 });
