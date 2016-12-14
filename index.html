@@ -21,7 +21,7 @@
 
       <div class="messages-container ">
         <p ng-repeat="message in messages | orderBy: $index: false">
-          {{message.message}}: </p>
+          {{message.message}}: {{message.cookie}} : {{message.createdAt}} </p>
           <span ng-repeat='cookie in cookies'>{{cookie}}</span>
 
       </div>

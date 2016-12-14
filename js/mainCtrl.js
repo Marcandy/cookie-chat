@@ -4,6 +4,7 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
   //You'll then save the result of that request to your controller's $scope as messages ($scope.messages)
   $scope.getMessages = function () {
      messageService.getMessages().then(function (messages) {
+       console.log(messages)
        $scope.messages = messages;
      })
   }
@@ -11,6 +12,7 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
 
   $scope.getCookies = function () {
     messageService.getCookies().then(function(cookies) {
+      ;
       $scope.cookies = cookies;
     })
   }
@@ -20,17 +22,17 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
   //pass that text to the postMessage method on the messageService object which will
   //then post it to the backend.
 
-  $scope.postMessage = function () {
+  $scope.postMessage = function (mes) {
 
-    messageService.postMessage($scope.message).then(function (res) {
+    messageService.postMessage(mes).then(function (res) {
       console.log(res); // no need to use .then we are just post stuff
       $scope.getMessages()
       $scope.message = '';
     })
   }
 
-  $scope.postCookie = function () {
-    messageService.postCookie($scope.cookie).then(function (res) {
+  $scope.postCookie = function (cookie) {
+    messageService.postCookie(cookie).then(function (res) {
       console.log(res);
       $scope.getCookies();
       $scope.cookie = '';
@@ -41,7 +43,7 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
    setInterval(function(){
     $scope.getMessages();
 
-  }, 2500)
+  }, 10500)
 
 
 
