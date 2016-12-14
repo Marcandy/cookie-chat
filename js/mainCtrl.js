@@ -31,4 +31,6 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
 
   }, 1500)
 
+
+  
 })
