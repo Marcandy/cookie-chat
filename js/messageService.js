@@ -5,7 +5,7 @@ angular.module('chatroom').service('messageService', function($http){
       method: 'GET',
       url: 'https://practiceapi.devmounta.in/api/chats' //change to https for redirect
     }).then(function (res) {
-      return res.data
+      return res.data.reverse();
     })
     //return promise; // we can resolve the promise to make it happen in the service
   }
@@ -15,7 +15,16 @@ angular.module('chatroom').service('messageService', function($http){
   //Be sure to return whatever gets returned from $http so you can call .then in your controller.
 
 
-
+  this.postMessage = function (myMessage) {
+    return $http({
+      method: 'POST',
+      url: 'https://practiceapi.devmounta.in/api/chats',
+      data:  {message: myMessage}
+    }).then(function (res) {
+      console.log(res);
+      return res;
+    })
+  }
 
   //On the line below create the postMessage method. This method will add data to the backend server.
   //The url for the request needs to be 'https://practiceapi.devmounta.in/api/chats'
@@ -23,6 +32,25 @@ angular.module('chatroom').service('messageService', function($http){
   //Also, remember that $http returns a promise. So if you return the whole $http call (return $http(...)), you can then use .then in your controller.
 
 
+  //additional api
 
+  this.getCookies = function () {
+    return $http({
+      method: "GET",
+      url: 'https://practiceapi.devmounta.in/api/cookies'
+    }).then(function(res) {
+      console.log('cookie', res);
+      return res.data;
+    })
+  }
+
+  this.postCookie = function (myCookie) {
+    return $http({
+      method: 'POST',
+      url: 'https://practiceapi.devmounta.in/api/cookies',
+      data: {myCookie}
+    })
+
+  }
 
 });
