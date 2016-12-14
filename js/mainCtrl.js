@@ -14,6 +14,7 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
   //pass that text to the postMessage method on the messageService object which will
   //then post it to the backend.
 
+  
 
 
   //uncomment this code when your getMessages function is finished
