@@ -1,11 +1,13 @@
 angular.module('chatroom').service('messageService', function($http){
   //Here you'll need to create two methods. One called postMessage and the other called getMessages.
   this.getMessages = function () {
-    var promise = $http({
+    return $http({
       method: 'GET',
       url: 'https://practiceapi.devmounta.in/api/chats' //change to https for redirect
+    }).then(function (res) {
+      return res.data
     })
-    return promise;
+    //return promise; // we can resolve the promise to make it happen in the service
   }
 
   //On the lines below create a getMessages method. This method will retrieve data from the backend.
