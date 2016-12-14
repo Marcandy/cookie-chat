@@ -15,11 +15,11 @@ angular.module('chatroom').service('messageService', function($http){
   //Be sure to return whatever gets returned from $http so you can call .then in your controller.
 
 
-  this.postMessage = function (message) {
+  this.postMessage = function (myMessage) {
     return $http({
       method: 'POST',
       url: 'https://practiceapi.devmounta.in/api/chats',
-      data: {message: message}
+      data:  {message: myMessage}
     }).then(function (res) {
       console.log(res);
       return res;

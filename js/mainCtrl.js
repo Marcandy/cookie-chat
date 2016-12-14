@@ -15,10 +15,11 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
   //then post it to the backend.
 
   $scope.postMessage = function () {
-    var message = $scope.message;
-    messageService.postMessage(message).then(function (res) {
+
+    messageService.postMessage($scope.message).then(function (res) {
       console.log(res); // no need to use .then we are just post stuff
-      message = '';
+      $scope.getMessages()
+      $scope.message = '';
     })
   }
 
