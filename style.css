@@ -28,7 +28,7 @@ body {
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  border: 5px solid #EFEFEF;
+  border: 6px solid #EFEFEF;
 
 }
 .time {
