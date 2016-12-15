@@ -23,7 +23,7 @@
         <p class='message' >
           <!-- created order by Date intead of having to do ng-revers in the res.data -->
           {{message.message + "|" + message.cookie}} </p>
-          <p class="time">{{message.createdAt}}</p>
+          <p class="time">{{message.createdAt | date:'short'}}</p>
       </div>
       <span ng-repeat='cookie in cookies'>{{cookie}}</span>
     </div>
