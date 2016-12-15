@@ -41,19 +41,3 @@ body {
   font-style: italic;
   font-size: bold;
 }
-
-.main-container h1 {
-  text-align: center;
-}
-
-.text-box {
-  margin: 0px auto;
-  width: 40%;
-}
-
-p{
-  text-align: center;
-  margin: 3px 0;
-  font-size: 18px;
-
-}
