@@ -2,7 +2,7 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
 
   //The getMessages function will call the getMessages method on the messageService object.
   //You'll then save the result of that request to your controller's $scope as messages ($scope.messages)
-  $scope.sortReverse = false;
+  // $scope.sortReverse = false;
   $scope.sortOptions = [
     { name: "Ascending", value: true },
     { name: "Descending", value: false }
