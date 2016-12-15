@@ -5,7 +5,8 @@ angular.module('chatroom').service('messageService', function($http){
       method: 'GET',
       url: 'https://practiceapi.devmounta.in/api/chats' //change to https for redirect
     }).then(function (res) {
-      return res.data.reverse();
+      return res.data
+      //reserse();
     })
     //return promise; // we can resolve the promise to make it happen in the service
   }
