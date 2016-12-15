@@ -22,14 +22,7 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
   //pass that text to the postMessage method on the messageService object which will
   //then post it to the backend.
 
-  $scope.postMessage = function (mes) {
 
-    messageService.postMessage(mes).then(function (res) {
-      console.log(res); // no need to use .then we are just post stuff
-      $scope.getMessages()
-      $scope.message = '';
-    })
-  }
 
   $scope.postCookie = function (cookie) {
     messageService.postCookie(cookie).then(function (res) {
