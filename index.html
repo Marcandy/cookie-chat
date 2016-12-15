@@ -7,17 +7,20 @@
   </head>
   <body ng-controller="mainCtrl">
     <div class="main-container">
-      <h1> DevMountain Chat Room </h1>
-      <form ng-submit="postMessage(message)">
-        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
+      <div class="top">
+        <h1> DevMountain Chat Room </h1>
+        <form ng-submit="postMessage(message)">
+          <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
 
-      </form>
+        </form>
 
-      <form ng-submit="postCookie(cookie)">
-        <input class="form-control text-box" type="text" ng-model="cookie" placeholder="cookie">
+        <form ng-submit="postCookie(cookie)">
+          <input class="form-control text-box" type="text" ng-model="cookie" placeholder="cookie">
 
 
-      </form>
+        </form>
+      </div>
+
 
       <div class="messages-container " ng-repeat="message in messages | orderBy : 'createdAt':true ">
         <p class='message' >

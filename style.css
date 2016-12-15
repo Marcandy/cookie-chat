@@ -16,12 +16,20 @@ body {
   padding: 5px;
   border-radius: 10px;
 
+  border: 5px solid #F1F2F2;
+}
+.top {
+  padding: 10px;
+  margin: 20px;
+  border: 5px solid #F1F2F2;
+  background-color: #a8a8a8;
 }
 .messages-container {
   display: flex;
   justify-content: space-around;
   padding: 10px;
-  border: 3px solid #F1F2F2;
+  border: px solid #EFEFEF;
+
 }
 .time {
   background-color: #2B98E2;
