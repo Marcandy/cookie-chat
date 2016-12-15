@@ -16,6 +16,7 @@
           <!--  reverse options for Ascending-->
         </form>
 
+
         <form ng-submit="postCookie(cookie)">
           <input class="form-control text-box" type="text" ng-model="cooki" placeholder="cookie">
 
@@ -24,7 +25,7 @@
       </div>
 
 
-      <div class="messages-container " ng-repeat="message in messages | filter: search | orderBy:sortReverse ">
+      <div class="messages-container " ng-repeat="message in messages | filter: search | orderBy:'createdAt':sortReverse ">
         <!--  giving orderBy to sort with createdat then passing sortReverse to show the option-->
         <p class='message' >
           <!-- created order by Date intead of having to do ng-revers in the res.data -->
