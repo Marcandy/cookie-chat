@@ -7,25 +7,28 @@
   </head>
   <body ng-controller="mainCtrl">
     <div class="main-container">
-      <h1> DevMountain Chat Room </h1>
-      <form ng-submit="postMessage(message)">
-        <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
+      <div class="top">
+        <h1> DevMountain Chat Room </h1>
+        <form ng-submit="postMessage(message)">
+          <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
 
-      </form>
+        </form>
 
-      <form ng-submit="postCookie(cookie)">
-        <input class="form-control text-box" type="text" ng-model="cookie" placeholder="cookie">
+        <form ng-submit="postCookie(cookie)">
+          <input class="form-control text-box" type="text" ng-model="cookie" placeholder="cookie">
 
 
-      </form>
-
-      <div class="messages-container ">
-        <p ng-repeat="message in messages | orderBy: $index: false">
-          {{message.message}}: {{message.cookie}} : {{message.createdAt}} </p>
-          <span ng-repeat='cookie in cookies'>{{cookie}}</span>
-
+        </form>
       </div>
 
+
+      <div class="messages-container " ng-repeat="message in messages | orderBy : 'createdAt':true ">
+        <p class='message' >
+          <!-- created order by Date intead of having to do ng-revers in the res.data -->
+          {{message.message + "|" + message.cookie}} </p>
+          <p class="time">{{message.createdAt | date:'short'}}</p>
+      </div>
+      <span ng-repeat='cookie in cookies'>{{cookie}}</span>
     </div>
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
