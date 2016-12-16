@@ -18,7 +18,7 @@ angular.module('chatroom').controller('mainCtrl', function($scope, messageServic
 
   $scope.getCookies = function () {
     messageService.getCookies().then(function(cookies) {
-      ;
+
       $scope.cookies = cookies;
     })
   }
